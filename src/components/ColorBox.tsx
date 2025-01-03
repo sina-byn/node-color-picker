@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text } from 'ink';
 
 // *  utils
-const spaces = (count: number = 10) => Array(count).fill(' ').join('');
+import { spaces } from '../utils/space.js';
 
 const bottomCenter = (text: string) => spaces(7) + text + spaces(2);
 
