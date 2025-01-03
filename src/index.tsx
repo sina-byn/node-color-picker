@@ -8,7 +8,7 @@ import ColorBox from './components/ColorBox.js';
 type PointerPosition = { x: number; y: number };
 
 // * constants
-const COLORS = ['white', 'black', 'red', 'blue', 'green', 'yellow', 'cyan', 'magenta'];
+const COLORS = ['white', 'black', 'red', 'blue', 'green', 'yellow', 'cyan', 'magenta'] as const;
 
 const DEFAULT_POINTER_POSITION = { x: 0, y: 0 };
 
@@ -16,6 +16,9 @@ const COLUMN_COUNT = 4;
 const WIDTH = 5 * COLUMN_COUNT;
 
 let color: string;
+
+// * types
+export type Color = (typeof COLORS)[number];
 
 const ColorPicker = () => {
   const [pointerPosition, setPointerPosition] = useState<PointerPosition>(DEFAULT_POINTER_POSITION);
