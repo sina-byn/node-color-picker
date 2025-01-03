@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { render, Box, useApp, useInput } from 'ink';
 
 // * components
+import Hint from './components/Hint.js';
 import ColorBox from './components/ColorBox.js';
 
 // * types
@@ -20,7 +21,11 @@ let color: string;
 // * types
 export type Color = (typeof COLORS)[number];
 
-const ColorPicker = () => {
+type ColorPickerProps = { hint?: boolean };
+
+type ColorPickerOptions = ColorPickerProps;
+
+const ColorPicker = ({ hint = true }: ColorPickerProps) => {
   const [pointerPosition, setPointerPosition] = useState<PointerPosition>(DEFAULT_POINTER_POSITION);
   const { x, y } = pointerPosition;
   const currentColor = COLORS[y * COLUMN_COUNT + x]!;
@@ -50,16 +55,20 @@ const ColorPicker = () => {
   });
 
   return (
-    <Box width={WIDTH} flexWrap='wrap' rowGap={-2}>
-      {COLORS.map(color => (
-        <ColorBox key={color} color={color} active={color === currentColor} />
-      ))}
-    </Box>
+    <>
+      {hint && <Hint />}
+
+      <Box width={WIDTH} flexWrap='wrap' rowGap={-2}>
+        {COLORS.map(color => (
+          <ColorBox key={color} color={color} active={color === currentColor} />
+        ))}
+      </Box>
+    </>
   );
 };
 
-export const colorPicker = () => {
-  const app = render(<ColorPicker />);
+export const colorPicker = (options: ColorPickerOptions) => {
+  const app = render(<ColorPicker {...options} />);
 
   return new Promise(async (resolve, reject) => {
     try {
