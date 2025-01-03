@@ -28,3 +28,13 @@ Then run :
 ```shell
 node index.js
 ```
+
+## Options
+
+|      |  Type   | Default |           Description           |
+|------|---------|---------|---------------------------------|
+| hint | boolean | `True`  | Whether to show the hint or not |
+
+```
+colorPicker(options);
+```
