@@ -1,13 +1,10 @@
 {
-  "name": "ink-color-picker",
+  "name": "node-color-picker",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "author": "",
   "license": "MIT",
-  "bin": {
-    "ink-color-picker": "dist/cli.js"
-  },
   "type": "module",
   "engines": {
     "node": ">=16"
