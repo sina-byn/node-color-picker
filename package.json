@@ -1,21 +1,24 @@
 {
   "name": "node-color-picker",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "author": "",
-  "license": "MIT",
+  "version": "1.0.0",
   "type": "module",
-  "engines": {
-    "node": ">=16"
-  },
-  "scripts": {
-    "build": "tsup-node",
-    "dev": "tsc --watch"
-  },
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "github:sina-byn/node-color-picker",
+  "homepage": "https://github.com/sina-byn/node-color-picker#readme",
+  "description": "A simple terminal color picker for Node.js",
+  "author": "Sina Bayandorian <sina.sina.bayan@protonmail.com> (https://sina-byn.netlify.app/)",
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "ink": "^4.1.0",
     "react": "^18.2.0"
@@ -29,5 +32,17 @@
     "tsup": "^8.3.5",
     "typescript": "^5.0.3"
   },
-  "keywords": []
+  "bugs": {
+    "url": "https://github.com/sina-byn/node-color-picker/issues",
+    "email": "sina.sina.bayan@protonmail.com"
+  },
+  "keywords": [
+    "cli",
+    "terminal",
+    "nodejs",
+    "ink",
+    "react",
+    "typescript",
+    "javascript"
+  ]
 }
