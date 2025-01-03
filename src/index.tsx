@@ -45,7 +45,7 @@ const ColorPicker = () => {
 
     setPointerPosition(({ x, y }) => ({
       x: Math.max(0, Math.min(x + stepX, 3)),
-      y: Math.max(0, Math.min(y + stepY, 3)),
+      y: Math.max(0, Math.min(y + stepY, 1)),
     }));
   });
 
